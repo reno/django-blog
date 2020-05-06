@@ -1,4 +1,4 @@
-# django_blog
+# django-blog
 
 Um blog utilizando Django.
 
