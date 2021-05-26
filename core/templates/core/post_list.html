@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="post">
+            <div class="dimmed">
+                {{ post.created_at }}
+            </div>
+            <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+            <p>{{ post.get_summary|linebreaksbr }}</p>
+            <div class="dimmed">
+                {% if post.get_comment_count > 1 %}
+                    <p>{{ post.get_comment_count }} comentários.</p>
+                {% elif post.get_comment_count == 1 %}
+                    <p>1 comentário.</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    {% if page_obj.has_other_pages %}
+        <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+        {% else %}
+            <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+            </ul>
+    {% endif %}
+{% endblock content %}
