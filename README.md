@@ -1,14 +1,8 @@
-# django-blog
+# Projeto final
 
-Um blog utilizando Django.
 
-## Uso
 
-Faça o clone do repositório:
-
-`git clone https://github.com/reno/django_rest_api.git`
-
-Crie um ambiente virtual:
+Para executar a aplicação, crie um ambiente virtual:
 
 `python3 -m venv venv`
 
