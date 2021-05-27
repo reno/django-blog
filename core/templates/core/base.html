@@ -13,7 +13,7 @@
         <div class="page-header">
             <h1><a href="/">Django Blog</a></h1>
             {% if user.is_authenticated %}
-                <a class="btn btn-dark " href="{% url 'post_new' %}" id="add_post">Adicionar postagem <span class="glyphicon glyphicon-plus"></span></a>
+                <a class="btn btn-dark " href="{% url 'post_new' %}" id="add_post">Adicionar postagem <span class="fas fa-plus"></span></a>
                 <a class="btn btn-dark float-right" href="{% url 'logout' %}" id="logout">Sair</a>
                 <br>
             {% else %}
