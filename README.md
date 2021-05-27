@@ -2,7 +2,7 @@
 
 Um blog baseado no clássico [tutorial Django Girls](https://tutorial.djangogirls.org/pt/), atualizado para utilizar views baseadas em classes.
 
-![print](https://drive.google.com/uc?export=view&id=1JEnGnRy6w5J0P5ITLMKwYZdtIkbNog1F)
+![django-blog](https://drive.google.com/uc?export=view&id=1JEnGnRy6w5J0P5ITLMKwYZdtIkbNog1F)
 
 ## 📌 Requisitos
 
