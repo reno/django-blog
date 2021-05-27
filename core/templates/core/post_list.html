@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% for post in post_list %}
+        <div class="post">
+            <div class="dimmed">
+                {{ post.created_at }}
+            </div>
+            <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <p>{{ post.get_summary|linebreaksbr }}</p>
+            <div class="dimmed">
+                {% if post.get_comment_count > 1 %}
+                    <p>{{ post.get_comment_count }} comentários.</p>
+                {% elif post.get_comment_count == 1 %}
+                    <p>1 comentário.</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    
+    <!--Pagination-->
+    {% if page_obj.has_other_pages %}
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                </li>
+            {% endif %}
+            {% for i in page_obj.paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                        {{ i }}
+                        <span class="sr-only">(current)</span>
+                    </span>
+                    </li>
+                {% else %}
+                    <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Próxima</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Próxima</a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+    <!--end of Pagination-->
+{% endblock content %}
