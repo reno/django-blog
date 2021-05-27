@@ -7,25 +7,18 @@ Um blog baseado no clássico [tutorial Django Girls](https://tutorial.djangogirl
 ## 📌 Requisitos
 
 - Python 3.6+
-
 - Pip
-
 - SQLite
-
   
 
 ## ⚙️ Tecnologias utilizadas
 
 - Django 3
-
 - HTML
-
 - CSS
-
 - Bootstrap 4
 
   
-
 ## 🚀 Uso
 
 Faça um clone do repositório:
@@ -55,7 +48,6 @@ Inicialize o servidor de desenvolvimento:
 Finalmente, acesse o servidor:
 
 `http://127.0.0.1:8000/`
-
 
 
 ## 🎯 Testes
